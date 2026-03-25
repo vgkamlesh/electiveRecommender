@@ -5,7 +5,7 @@ const electives = require('./seedElectives');
 
 const app = express();
 const PORT = 3000;
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGODB_URI;
 const DB_NAME = 'elective_recommender';
 
 app.use(cors());
