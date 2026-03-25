@@ -18,7 +18,7 @@ export default function App() {
       return;
     }
 
-    fetch(`http://localhost:3000/api/recommendation/${id}`, {
+    fetch(`https://electiverecommender.onrender.com/api/recommendation/${id}`, {
       signal: controller.signal
     })
       .then(res => {
