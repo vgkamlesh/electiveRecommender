@@ -54,6 +54,6 @@ export class Result {
   openReactDashboard() {
     const current = this.data();
     if (!current?.responseId) return;
-    window.open(`http://localhost:5173/?id=${current.responseId}`, '_blank');
+    window.open(`https://elective-recommender-pk83.vercel.app/?id=${current.responseId}`, '_blank');
   }
 }
