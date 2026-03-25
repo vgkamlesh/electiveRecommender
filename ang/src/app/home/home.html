@@ -1,0 +1,74 @@
+<div class="page">
+  <div class="card" [formGroup]="form">
+
+    <div class="title-row">
+      <div>
+        <h1>Smart Elective Recommendation System</h1>
+        <p class="sub">Enter your details and get the best elective suggestions.</p>
+      </div>
+
+      <button type="button" class="info-btn" (click)="openInfoDialog()">
+        Info
+      </button>
+    </div>
+
+    <label>Name</label>
+    <input formControlName="name" type="text">
+
+    <label>Cumulative GPA</label>
+    <input formControlName="gpa" type="number" min="0" max="10" step="0.1">
+
+    <label>Goal</label>
+    <select formControlName="goal">
+      <option value="">Select</option>
+      <option value="placement">Placement</option>
+      <option value="higher">Higher Studies</option>
+      <option value="both">Both</option>
+    </select>
+
+    <label>Preferred Difficulty</label>
+    <select formControlName="preferredDifficulty">
+      <option value="">No preference</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <label>Interests</label>
+    <div class="interest-grid">
+      @for (item of interestOptions; track item) {
+        <label class="check-item">
+          <input
+            type="checkbox"
+            [checked]="form.value.interests?.includes(item)"
+            (change)="toggleInterest(item, $any($event.target).checked)"
+          >
+          <span>{{ item }}</span>
+        </label>
+      }
+    </div>
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+
+    <button class="submit-btn"
+      (click)="submit()"
+      [disabled]="loading() || form.invalid">
+      {{ loading() ? 'Generating...' : 'Get Recommendation' }}
+    </button>
+
+  </div>
+
+  <dialog #infoDialog class="info-dialog">
+    <div class="dialog-content">
+      <h2>About This Page</h2>
+      <p>To give students a proper recommendation</p>
+
+      <button type="button" class="close-btn" (click)="closeInfoDialog()">
+        Close
+      </button>
+    </div>
+  </dialog>
+
+</div>

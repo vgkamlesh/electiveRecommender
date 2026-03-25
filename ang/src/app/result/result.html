@@ -1,0 +1,75 @@
+<div class="result-page">
+  @if (loading()) {
+    <p class="loading">Loading recommendation...</p>
+  }
+
+  @if (!loading() && error()) {
+    <p class="error">{{ error() }}</p>
+    <a routerLink="/" class="back">Go back</a>
+  }
+
+  @if (!loading() && data(); as result) {
+    <div class="student-box">
+      <h2>Recommendation Result</h2>
+      <p><strong>Name:</strong> {{ result.student.name }}</p>
+      <p><strong>GPA:</strong> {{ result.student.gpa }}</p>
+      <p><strong>Goal:</strong> {{ result.student.goal }}</p>
+      <p><strong>Preferred Difficulty:</strong> {{ result.student.preferredDifficulty || 'Not selected' }}</p>
+      <p><strong>Interests:</strong> {{ result.student.interests.join(', ') }}</p>
+    </div>
+
+    @if ((result.overallWarnings ?? []).length > 0) {
+      <div class="overall-warning-box">
+        <h3>Important Note</h3>
+        <ul>
+          @for (warning of (result.overallWarnings ?? []); track warning) {
+            <li>{{ warning }}</li>
+          }
+        </ul>
+      </div>
+    }
+
+    <div class="actions">
+      <button (click)="openReactDashboard()">Open React Dashboard</button>
+      <a routerLink="/" class="back">Go back</a>
+    </div>
+
+    <div class="recommendation-list">
+      @for (item of result.recommendations; track item.name) {
+        <div class="recommendation-card">
+          <h3>{{ item.name }}</h3>
+
+          <p><strong>Domain:</strong> {{ item.domain }}</p>
+          <p><strong>Difficulty:</strong> {{ item.difficulty }}</p>
+          <p><strong>Placement Value:</strong> {{ item.placementValue }}</p>
+          <p><strong>Higher Study Value:</strong> {{ item.higherStudyValue }}</p>
+          <p><strong>Score:</strong> {{ item.score }}</p>
+
+          <p class="desc">{{ item.description }}</p>
+
+          @if ((item.reasons ?? []).length > 0) {
+            <div class="reasons">
+              <h4>Why this is recommended</h4>
+              <ul>
+                @for (reason of (item.reasons ?? []); track reason) {
+                  <li>{{ reason }}</li>
+                }
+              </ul>
+            </div>
+          }
+
+          @if ((item.warnings ?? []).length > 0) {
+            <div class="warnings">
+              <h4>Warnings</h4>
+              <ul>
+                @for (warning of (item.warnings ?? []); track warning) {
+                  <li>{{ warning }}</li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

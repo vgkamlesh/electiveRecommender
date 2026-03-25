@@ -1,0 +1,102 @@
+.result-page {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #2563eb;
+}
+
+.student-box {
+  background: #f5f7fb;
+  border: 1px solid #d9e2f0;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.overall-warning-box {
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+}
+
+.overall-warning-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #9a3412;
+}
+
+.overall-warning-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.actions button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.recommendation-list {
+  display: grid;
+  gap: 18px;
+}
+
+.recommendation-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.desc {
+  margin-top: 8px;
+  color: #444;
+}
+
+.reasons h4,
+.warnings h4 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.reasons ul,
+.warnings ul {
+  padding-left: 20px;
+}
+
+.warnings {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff4e5;
+  border: 1px solid #f5c97a;
+}
