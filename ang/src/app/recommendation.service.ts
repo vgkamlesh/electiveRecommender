@@ -7,7 +7,7 @@ import { RecommendationResponse } from './models';
 })
 export class RecommendationService {
   private http = inject(HttpClient);
-  private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = 'https://electiverecommender.onrender.com/api';
 
   seed() {
     return this.http.post<{ message: string }>(`${this.baseUrl}/seed`, {});
