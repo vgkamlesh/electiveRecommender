@@ -348,5 +348,3 @@ connectDB()
   .catch(error => {
     console.error('DB connection failed:', error);
   });
-
-  
