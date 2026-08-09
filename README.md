@@ -2,6 +2,12 @@
 
 A web application for recommending electives to students.
 
+## Links
+
+Live website: https://elective-recommender-qf8e-ajm3uik76-kamlesh2.vercel.app/
+
+Backend: https://electiverecommender.onrender.com
+
 ## Tech Stack
 
 * Angular
@@ -16,11 +22,6 @@ A web application for recommending electives to students.
 * `reactapp/` - React frontend
 * `backend/` - Express backend
 
-## Links
-
-Live website: https://elective-recommender-qf8e-ajm3uik76-kamlesh2.vercel.app/
-
-Backend: https://electiverecommender.onrender.com
 
 ## Running Locally
 
